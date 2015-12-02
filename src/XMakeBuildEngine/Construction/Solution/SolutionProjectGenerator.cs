@@ -1144,7 +1144,7 @@ namespace Microsoft.Build.Construction
 
             ProjectTargetInstance target = metaprojectInstance.AddTarget(targetName ?? "Build", String.Empty, String.Empty, outputItemAsItem, null, String.Empty, String.Empty, false /* legacy target returns behaviour */);
 
-            AddReferencesBuildTask(metaprojectInstance, target, targetName, outputItem);
+            AddReferencesBuildTask(metaprojectInstance, target, targetName, null);
 
             // Add the task to build the actual project.
             AddProjectBuildTask(traversalProject, project, projectConfiguration, target, targetName, EscapingUtilities.Escape(project.AbsolutePath), String.Empty, outputItem);
